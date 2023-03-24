@@ -34,14 +34,13 @@ fun SplashScreen(
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-
         // Logo
         Image(
             painter = painterResource(id = R.drawable.ic_compose_logo),
             contentDescription = stringResource(id = R.string.cd_app_logo),
             modifier = Modifier
                 .size(200.dp)
-                .align(Alignment.Center),
+                .align(Alignment.Center)
         )
 
         // Version number

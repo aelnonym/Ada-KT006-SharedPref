@@ -1,6 +1,10 @@
 package com.theapache64.composeandroidtemplate.ui.screen.dashboard
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -18,8 +22,6 @@ import com.theapache64.composeandroidtemplate.R
 fun DashboardScreen(
     viewModel: DashboardViewModel = hiltViewModel()
 ) {
-
-
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

@@ -1,23 +1,20 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
 }
-apply plugin: 'kotlin-kapt'
-apply plugin: 'dagger.hilt.android.plugin'
 
 android {
+    namespace 'com.example.loginuser'
     compileSdk 33
+
     defaultConfig {
-        applicationId "com.theapache64.composeandroidtemplate"
-        minSdk 21
+        applicationId "com.example.loginuser"
+        minSdk 24
         targetSdk 33
-        versionCode 20220822
-        versionName "0.0.1"
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
     }
 
     buildTypes {
@@ -33,38 +30,19 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     buildFeatures {
-        compose true
+        viewBinding = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion compose_compiler_version
-    }
-    namespace 'com.theapache64.composeandroidtemplate'
 }
 
 dependencies {
 
-    // Test
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
-
-    // Core
-    implementation 'androidx.activity:activity-compose:1.6.1'
-
-    // Compose
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.material:material:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling:$compose_version"
-
-    // Hilt
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    kapt "com.google.dagger:hilt-compiler:$hilt_version"
-
-    // Navigation Compose Hilt Integration : Navigation Compose Hilt Integration
-    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
-
-    // Compose Navigation : Compose integration with Navigation
-    implementation 'androidx.navigation:navigation-compose:2.6.0-alpha04'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
